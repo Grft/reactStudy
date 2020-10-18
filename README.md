@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Only record my study for the Coursera course
+
+### Exercises followed the guide, Assignments wrote by myself
+
+### DO NOT use for any other purpose
+
+### DO NOT copy for assignments
+
 ## Available Scripts
 
 In the project directory, you can run:
