@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
-import Home from "./HomeComponent";
+import React from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
+import Home from "./HomeComponent";
 import Menu from './MenuComponent';
+import Contact from "./ContactComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import {DISHES} from "../shared/dishes";
+import {PROMOTIONS} from "../shared/promotions";
+import {LEADERS} from "../shared/leaders";
 
 /*
 class Main extends Component {
@@ -36,15 +39,24 @@ class Main extends Component {
     }
 }*/
 
-function Main() {
-    const [dishes] = useState(DISHES);
+function HomePage() {
+    return (
+        <Home
+            dish={DISHES.filter((dish) => dish.featured)[0]}
+            promotion={PROMOTIONS.filter((promo) => promo.featured)[0]}
+            leader={LEADERS.filter((leader) => leader.featured)[0]}
+        />
+    );
+}
 
+function Main() {
     return (
         <div>
             <Header />
             <Switch>
-                <Route path='/home' component={() => <Home />} />
-                <Route exact path='/menu' component={() => <Menu dishes={dishes} />} />
+                <Route path='/home' component={() => HomePage()} />
+                <Route exact path='/menu' component={() => <Menu dishes={DISHES} />} />
+                <Route exact path='/contactus' component={() => <Contact />} />
                 <Redirect to="/home" />
             </Switch>
             <Footer />
