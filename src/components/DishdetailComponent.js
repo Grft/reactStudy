@@ -44,7 +44,7 @@ class Dishdetail extends Component {
                     <ul className="list-group text-left">
                         {this.props.selectedDish.comments.map((comment) => {
                             return (
-                                <div>{this.renderEachComment(comment)}</div>
+                                <div key={comment.id}>{this.renderEachComment(comment)}</div>
                             );
                         })}
                     </ul>
